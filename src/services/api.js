@@ -231,7 +231,9 @@ export async function getImportedGames({ limit = 20, sort = '-metacritic' } = {}
 export async function uploadImage(file) {
   const form = new FormData();
   form.append('file', file);
-  const res = await fetch(`${BASE}/uploads`, fetchAuthOptions({ method: 'POST', body: form }));
+  // Include Authorization header (Bearer token) if available; do NOT set Content-Type so the browser
+  // can add the correct multipart boundary.
+  const res = await fetch(`${BASE}/uploads`, fetchAuthOptions({ method: 'POST', body: form, headers: authHeaders() }));
   return handleResponse(res);
 }
 
