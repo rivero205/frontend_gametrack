@@ -1,0 +1,20 @@
+/* Local font-face declarations for TT Autonomus
+   Put the font files in public/fonts/ with the names used below. */
+
+@font-face {
+  font-family: 'TT Autonomus';
+  src: url('/fonts/TTAutonomus-Regular.woff2') format('woff2'),
+       url('/fonts/TTAutonomus-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Autonomus';
+  src: url('/fonts/TTAutonomus-Bold.woff2') format('woff2'),
+       url('/fonts/TTAutonomus-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,166 @@
+/* ===== AUTH (login/register) styles ===== */
+.auth {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 1.25rem;
+  border-radius: 12px;
+  /* slightly wider register form on desktop */
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+.auth-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:1rem;
+}
+.auth-icon{
+  width:44px;
+  height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(37,99,235,0.08));
+  color:var(--gt-emerald);
+  box-shadow: 0 6px 18px rgba(16,185,129,0.06) inset;
+}
+.auth-title{
+  font-size:1.25rem;
+  font-weight:700;
+  margin:0;
+  color:var(--gt-text-primary);
+}
+.form-control{
+  width:100%;
+  padding:0.7rem 0.9rem;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.02);
+  color: var(--gt-text-primary);
+}
+.form-group label{ /* make labels clean, no raw asterisks */
+  display:block;
+  margin-bottom:0.5rem;
+  color:var(--gt-text-secondary);
+  font-weight:600;
+}
+.form-actions{
+  margin-top:1rem;
+}
+.auth .btn{
+  width:100%;
+}
+
+.auth-footer{
+  margin-top: 0.75rem;
+  text-align: center;
+}
+.auth-footer p{
+  margin: 0;
+  color: var(--gt-text-secondary);
+  font-size: 0.95rem;
+}
+.auth-footer .link-register{
+  color: var(--gt-emerald);
+  font-weight: 700;
+  margin-left: 0.25rem;
+  text-decoration: none;
+}
+.auth-footer .link-register:hover{
+  text-decoration: underline;
+}
+
+/* small adjustments for very narrow screens */
+@media (max-width: 420px) {
+  .auth { padding: 1rem; border-radius: 8px; }
+  .auth-title { font-size: 1.1rem; }
+  .auth-icon { width:40px; height:40px; }
+}
+/* Auth page specific styles: avatar upload and dark-mode select */
+
+.auth .avatar-upload {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--gt-space-md);
+  background: var(--gt-card-bg);
+  border: 1px dashed var(--gt-input-border);
+  border-radius: var(--gt-radius-lg);
+  padding: var(--gt-space-md);
+  position: relative;
+}
+
+.auth .avatar-upload:focus-within {
+  border-color: var(--gt-input-border-focus);
+  box-shadow: 0 0 0 3px var(--gt-emerald-alpha-20);
+}
+
+.auth .avatar-upload input[type="file"] {
+  /* Hide the raw file input, use a styled label */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.auth .avatar-placeholder {
+  color: var(--gt-text-tertiary);
+}
+
+.auth .avatar-preview {
+  width: 100%;
+  max-width: 180px;
+  height: 120px;
+  border-radius: var(--gt-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--gt-card-border);
+  background: var(--gt-bg-tertiary);
+}
+
+.auth .avatar-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.auth .upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gt-btn-secondary-bg);
+  color: var(--gt-text-primary);
+  border: 1px solid var(--gt-btn-secondary-border);
+  border-radius: var(--gt-radius-md);
+  padding: var(--gt-space-xs) var(--gt-space-sm);
+  cursor: pointer;
+  transition: background var(--gt-transition-base), border-color var(--gt-transition-base);
+}
+
+.auth .upload-btn:hover {
+  background: var(--gt-btn-secondary-bg-hover);
+  border-color: var(--gt-btn-secondary-border-hover);
+}
+
+/* Experience level select tweaks for dark mode */
+.auth .experience-select {
+  background: var(--gt-input-bg);
+  border: 1px solid var(--gt-input-border);
+  color: var(--gt-input-text);
+  border-radius: var(--gt-radius-md);
+  padding: var(--gt-space-xs) var(--gt-space-sm);
+}
+
+.auth .experience-select:focus {
+  outline: none;
+  border-color: var(--gt-input-border-focus);
+  box-shadow: 0 0 0 3px var(--gt-emerald-alpha-20);
+}
+

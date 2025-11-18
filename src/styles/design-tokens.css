@@ -1,0 +1,327 @@
+/* ===== GAMETRACK REVOLUTION - DESIGN TOKENS ===== */
+
+/* Este archivo define los tokens de diseño específicos para GameTrack Revolution.
+   Extiende el design-system.css base con colores, espaciados y estilos modernos. */
+
+:root {
+  /* ===== PALETA DE COLORES MODERNOS ===== */
+  
+  /* Blacks & Grays (Gaming Theme) */
+  --gt-black: #0A0A0A;
+  --gt-charcoal: #1A1A1A;
+  --gt-dark-gray: #2A2A2A;
+  --gt-mid-gray: #3A3A3A;
+  --gt-light-gray: #E5E7EB;
+  --gt-white: #FFFFFF;
+  --gt-gray-50: #F9FAFB;
+  
+  /* Alpha Versions */
+  --gt-black-alpha-50: rgba(10, 10, 10, 0.5);
+  --gt-black-alpha-75: rgba(10, 10, 10, 0.75);
+  --gt-white-alpha-08: rgba(255, 255, 255, 0.08);
+  
+  /* Emerald Green (Primary Brand) */
+  --gt-emerald: #10B981;
+  --gt-emerald-light: #34D399;
+  --gt-emerald-dark: #065F46;
+  --gt-emerald-hover: #059669;
+  --gt-emerald-alpha-10: rgba(16, 185, 129, 0.1);
+  --gt-emerald-alpha-20: rgba(16, 185, 129, 0.2);
+  --gt-emerald-alpha-30: rgba(16, 185, 129, 0.3);
+  --gt-emerald-alpha-40: rgba(16, 185, 129, 0.4);
+  
+  /* Mint Green (Secondary) */
+  --gt-mint: #34D399;
+  --gt-mint-light: #6EE7B7;
+  --gt-mint-dark: #10B981;
+  --gt-mint-alpha-20: rgba(52, 211, 153, 0.2);
+  
+  /* Gaming Accent Colors */
+  --gt-electric-blue: #3B82F6;
+  --gt-neon-purple: #8B5CF6;
+  --gt-neon-purple-alpha-50: rgba(139, 92, 246, 0.5);
+  --gt-cyber-yellow: #F59E0B;
+  --gt-yellow: #F59E0B;
+  --gt-danger-red: #EF4444;
+  
+  /* ===== GRADIENTES ===== */
+  --gt-gradient-primary: linear-gradient(135deg, var(--gt-white) 0%, var(--gt-mint) 100%);
+  --gt-gradient-dark: linear-gradient(135deg, var(--gt-black) 0%, var(--gt-charcoal) 100%);
+  --gt-gradient-emerald: linear-gradient(135deg, var(--gt-emerald) 0%, var(--gt-emerald-light) 100%);
+  --gt-gradient-gaming: linear-gradient(135deg, var(--gt-electric-blue) 0%, var(--gt-neon-purple) 100%);
+  
+  /* ===== ESPACIADO GAMING ===== */
+  --gt-space-xs: 4px;
+  --gt-space-sm: 8px;
+  --gt-space-md: 12px;
+  --gt-space-lg: 16px;
+  --gt-space-xl: 24px;
+  --gt-space-2xl: 32px;
+  --gt-space-3xl: 48px;
+  --gt-space-4xl: 64px;
+  --gt-space-5xl: 96px;
+  
+  /* ===== TIPOGRAFÍA GAMING ===== */
+  --gt-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --gt-font-mono: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  
+  /* Font Sizes */
+  --gt-text-xs: 12px;
+  --gt-text-sm: 14px;
+  --gt-text-base: 16px;
+  --gt-text-lg: 18px;
+  --gt-text-xl: 20px;
+  --gt-text-2xl: 24px;
+  --gt-text-3xl: 30px;
+  --gt-text-4xl: 36px;
+  --gt-text-5xl: 48px;
+  --gt-text-6xl: 60px;
+  
+  /* Font Weights */
+  --gt-font-light: 300;
+  --gt-font-normal: 400;
+  --gt-font-medium: 500;
+  --gt-font-semibold: 600;
+  --gt-font-bold: 700;
+  --gt-font-extrabold: 800;
+  
+  /* Line Heights */
+  --gt-leading-tight: 1.25;
+  --gt-leading-snug: 1.375;
+  --gt-leading-normal: 1.5;
+  --gt-leading-relaxed: 1.625;
+  --gt-leading-loose: 2;
+  
+  /* ===== BORDES Y RADIOS ===== */
+  --gt-radius-sm: 4px;
+  --gt-radius-md: 6px;
+  --gt-radius-lg: 8px;
+  --gt-radius-xl: 12px;
+  --gt-radius-2xl: 16px;
+  --gt-radius-3xl: 24px;
+  --gt-radius-full: 9999px;
+  
+  --gt-border-width: 1px;
+  --gt-border-width-2: 2px;
+  --gt-border-width-4: 4px;
+  
+  /* ===== SOMBRAS GAMING ===== */
+  --gt-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --gt-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --gt-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --gt-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --gt-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --gt-shadow-gaming: 0 8px 32px rgba(16, 185, 129, 0.3);
+  --gt-shadow-neon: 0 0 20px rgba(16, 185, 129, 0.6);
+  
+  /* ===== TRANSICIONES ===== */
+  --gt-transition-fast: 150ms ease-in-out;
+  --gt-transition-base: 200ms ease-in-out;
+  --gt-transition-slow: 300ms ease-in-out;
+  --gt-transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* ===== Z-INDEX LAYERS ===== */
+  --gt-z-base: 0;
+  --gt-z-dropdown: 1000;
+  --gt-z-sticky: 1020;
+  --gt-z-fixed: 1030;
+  --gt-z-modal-backdrop: 1040;
+  --gt-z-modal: 1050;
+  --gt-z-popover: 1060;
+  --gt-z-tooltip: 1070;
+  --gt-z-toast: 1080;
+  
+  /* ===== BREAKPOINTS (para reference) ===== */
+  --gt-screen-sm: 640px;
+  --gt-screen-md: 768px;
+  --gt-screen-lg: 1024px;
+  --gt-screen-xl: 1280px;
+  --gt-screen-2xl: 1536px;
+  
+  /* ===== SEMANTIC TOKENS (TEMA CLARO POR DEFECTO) ===== */
+  --gt-bg-primary: var(--gt-white);
+  --gt-bg-secondary: #FAFAFA;
+  --gt-bg-tertiary: #F3F4F6;
+  --gt-bg-accent: var(--gt-emerald-alpha-10);
+  --gt-bg-gaming: var(--gt-gradient-dark);
+  
+  --gt-text-primary: var(--gt-charcoal);
+  --gt-text-secondary: #4B5563;
+  --gt-text-tertiary: #9CA3AF;
+  --gt-text-accent: var(--gt-emerald);
+  --gt-text-inverse: var(--gt-white);
+  --gt-text-gaming: var(--gt-gradient-primary);
+  
+  --gt-border-primary: #E5E7EB;
+  --gt-border-secondary: #D1D5DB;
+  --gt-border-accent: var(--gt-emerald);
+  --gt-border-gaming: rgba(255, 255, 255, 0.1);
+  
+  /* Buttons */
+  --gt-btn-primary-bg: var(--gt-emerald);
+  --gt-btn-primary-bg-hover: var(--gt-emerald-hover);
+  --gt-btn-primary-text: var(--gt-black);
+  --gt-btn-primary-text-hover: var(--gt-white);
+  
+  --gt-btn-secondary-bg: transparent;
+  --gt-btn-secondary-bg-hover: var(--gt-light-gray);
+  --gt-btn-secondary-text: var(--gt-light-gray);
+  --gt-btn-secondary-text-hover: var(--gt-black);
+  --gt-btn-secondary-border: var(--gt-light-gray);
+  --gt-btn-secondary-border-hover: var(--gt-emerald);
+  
+  /* Cards */
+  --gt-card-bg: var(--gt-white);
+  --gt-card-bg-gaming: rgba(255, 255, 255, 0.05);
+  --gt-card-border: var(--gt-border-primary);
+  --gt-card-border-gaming: rgba(255, 255, 255, 0.1);
+  --gt-card-shadow: var(--gt-shadow-md);
+  --gt-card-shadow-gaming: var(--gt-shadow-gaming);
+  
+  /* Inputs */
+  --gt-input-bg: var(--gt-white);
+  --gt-input-bg-focus: #FFFFFF;
+  --gt-input-border: var(--gt-border-secondary);
+  --gt-input-border-focus: var(--gt-emerald);
+  --gt-input-text: var(--gt-text-primary);
+  --gt-input-placeholder: var(--gt-text-tertiary);
+}
+
+/* ===== TEMA GAMING OSCURO ===== */
+[data-theme="dark"], .theme-gaming {
+  --gt-bg-primary: var(--gt-black);
+  --gt-bg-secondary: var(--gt-charcoal);
+  --gt-bg-tertiary: var(--gt-dark-gray);
+  --gt-bg-accent: var(--gt-emerald-alpha-20);
+  
+  --gt-text-primary: var(--gt-white);
+  --gt-text-secondary: var(--gt-light-gray);
+  --gt-text-tertiary: #9CA3AF;
+  --gt-text-accent: var(--gt-emerald-light);
+  --gt-text-inverse: var(--gt-black);
+  
+  --gt-border-primary: rgba(255, 255, 255, 0.1);
+  --gt-border-secondary: rgba(255, 255, 255, 0.2);
+  --gt-border-accent: var(--gt-emerald-light);
+  
+  --gt-btn-primary-bg: var(--gt-emerald);
+  --gt-btn-primary-bg-hover: var(--gt-emerald-dark);
+  --gt-btn-primary-text: var(--gt-white);
+  --gt-btn-primary-text-hover: var(--gt-white);
+  
+  --gt-btn-secondary-bg: transparent;
+  --gt-btn-secondary-bg-hover: var(--gt-emerald-alpha-10);
+  --gt-btn-secondary-text: var(--gt-light-gray);
+  --gt-btn-secondary-text-hover: var(--gt-emerald-light);
+  --gt-btn-secondary-border: var(--gt-light-gray);
+  --gt-btn-secondary-border-hover: var(--gt-emerald-light);
+  
+  --gt-card-bg: rgba(255, 255, 255, 0.05);
+  --gt-card-border: rgba(255, 255, 255, 0.1);
+  --gt-card-shadow: var(--gt-shadow-xl);
+  
+  --gt-input-bg: var(--gt-dark-gray);
+  --gt-input-bg-focus: rgba(255, 255, 255, 0.1);
+  --gt-input-border: rgba(255, 255, 255, 0.2);
+  --gt-input-border-focus: var(--gt-emerald-light);
+  --gt-input-text: var(--gt-white);
+  --gt-input-placeholder: #9CA3AF;
+}
+
+/* ===== CLASES UTILITARIAS GAMING ===== */
+
+/* Typography */
+.gt-text-gradient {
+  background: var(--gt-gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gt-text-gaming {
+  background: linear-gradient(135deg, var(--gt-white) 0%, var(--gt-mint) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Backgrounds */
+.gt-bg-gaming {
+  background: var(--gt-gradient-dark);
+}
+
+.gt-bg-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Effects */
+.gt-hover-glow:hover {
+  box-shadow: var(--gt-shadow-neon);
+  transition: var(--gt-transition-base);
+}
+
+.gt-hover-lift:hover {
+  transform: translateY(-2px);
+  transition: var(--gt-transition-base);
+}
+
+.gt-hover-gaming:hover {
+  background: var(--gt-emerald-alpha-10);
+  color: var(--gt-emerald);
+  transition: var(--gt-transition-base);
+}
+
+/* Gaming specific animations */
+@keyframes gt-pulse-gaming {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--gt-emerald-alpha-40);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+}
+
+.gt-pulse-gaming {
+  animation: gt-pulse-gaming 2s infinite;
+}
+
+@keyframes gt-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.gt-float {
+  animation: gt-float 3s ease-in-out infinite;
+}
+
+/* Component-specific tokens */
+.gt-header-modern {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gt-border-gaming);
+}
+
+.gt-card-gaming {
+  background: var(--gt-card-bg-gaming);
+  border: 1px solid var(--gt-card-border-gaming);
+  backdrop-filter: blur(16px);
+}
+
+.gt-button-gaming {
+  background: var(--gt-btn-primary-bg);
+  color: var(--gt-btn-primary-text);
+  border: none;
+  padding: var(--gt-space-md) var(--gt-space-xl);
+  border-radius: var(--gt-radius-lg);
+  font-weight: var(--gt-font-semibold);
+  transition: var(--gt-transition-base);
+}
+
+.gt-button-gaming:hover {
+  background: var(--gt-btn-primary-bg-hover);
+  color: var(--gt-btn-primary-text-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--gt-shadow-gaming);
+}

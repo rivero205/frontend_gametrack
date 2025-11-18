@@ -1,0 +1,281 @@
+/* ================================
+   PROFILE — ESTILOS COMPLETOS
+   TOTALMENTE RESPONSIVE
+================================ */
+
+/* ROOT */
+:root {
+  /* Puedes colocar variables adicionales si lo deseas */
+}
+
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+.profile-root {
+  background: var(--gt-card-bg, var(--card-bg, #ffffff));
+  border: 1px solid var(--gt-card-border, var(--border-primary, #e5e7eb));
+  box-shadow: var(--gt-card-shadow, 0 4px 6px rgba(0,0,0,0.06));
+  border-radius: var(--gt-radius-lg, var(--border-radius-md, 6px));
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ================================
+   HEADER (AVATAR + INFO)
+================================ */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  flex-wrap: wrap; /* <--- RESPONSIVE */
+}
+
+/* AVATAR */
+.avatar-container {
+  width: 110px;
+  height: 110px;
+  min-width: 110px;
+  border-radius: var(--gt-radius-2xl, 9999px);
+  padding: 0.5rem;
+  background: linear-gradient(180deg, rgba(16,185,129,0.06), rgba(37,99,235,0.02));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--gt-shadow-lg, 0 10px 15px rgba(0,0,0,0.08));
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  font-size: calc(var(--gt-text-3xl, 30px) * 0.9);
+  font-weight: var(--gt-font-bold, 700);
+  color: var(--gt-text-inverse, #fff);
+  background: linear-gradient(135deg, var(--gt-emerald, #10B981), var(--gt-electric-blue, #3B82F6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ================================
+   CONTENEDOR DE NOMBRE Y STATS
+================================ */
+.profile-main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+
+  flex-wrap: wrap; /* <--- RESPONSIVE */
+}
+
+.profile-name-and-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.profile-name {
+  font-size: var(--font-size-5xl, 36px);
+  font-weight: var(--font-weight-extrabold, 800);
+  color: var(--gt-text-primary, #111827);
+  line-height: 1.05;
+}
+
+.profile-email {
+  font-size: 0.9rem;
+  color: var(--gt-text-secondary, #6b7280);
+}
+
+/* BOTÓN EDITAR */
+.btn-edit-profile {
+  background: transparent;
+  color: var(--gt-text-primary, #111827);
+  border: 1px solid var(--gt-btn-secondary-border, #e5e7eb);
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.btn-edit-profile:hover {
+  background: rgba(16,185,129,0.06);
+  border-color: rgba(16,185,129,0.22);
+  transform: translateY(-1px);
+}
+
+/* ================================
+   ESTADÍSTICAS
+================================ */
+.profile-stats {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.stat-card {
+  background: rgba(16,185,129,0.06);
+  border: 1px solid rgba(16,185,129,0.12);
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(16,185,129,0.06);
+
+  flex: 1 1 auto;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gt-text-primary, #111827);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--gt-text-tertiary, #9ca3af);
+}
+
+/* ================================
+   BREAKPOINT — TABLETS (<= 680px)
+================================ */
+@media (max-width: 680px) {
+
+  .profile-root {
+    padding: 1rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .avatar-container {
+    width: 88px;
+    height: 88px;
+    min-width: 88px;
+    padding: 0.25rem;
+  }
+
+  .avatar {
+    font-size: 18px;
+  }
+
+  .profile-main {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .profile-name {
+    font-size: 1.35rem;
+  }
+
+  .btn-edit-profile {
+    padding: 0.36rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .profile-stats {
+    width: 100%;
+    gap: 0.75rem;
+    justify-content: space-between;
+  }
+
+  .stat-card {
+    flex: 1 1 calc(50% - 0.75rem);
+    min-width: 0;
+  }
+}
+
+/* ================================
+   BREAKPOINT — MÓVILES PEQUEÑOS (<= 480px)
+================================ */
+@media (max-width: 480px) {
+
+  .avatar-container {
+    width: 75px;
+    height: 75px;
+    min-width: 75px;
+  }
+
+  .profile-name {
+    font-size: 1.15rem;
+  }
+
+  .profile-email {
+    font-size: 0.82rem;
+  }
+
+  .stat-card {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+/* ================================
+   SECCIONES EXTRA DEL PERFIL
+   (LIBRARY, REVIEWS)
+================================ */
+
+.library-preview { margin-top: 1.25rem; }
+.library-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.mini-game-card { display:flex; gap:0.6rem; align-items:center; padding:0.5rem; border-radius:8px; background:var(--gt-card-bg, #fff); border:1px solid var(--gt-card-border, #e5e7eb); }
+.mini-cover img { width:56px; height:56px; object-fit:cover; border-radius:6px; }
+.mini-placeholder { width:56px; height:56px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--gt-emerald),var(--gt-electric-blue)); color:#fff; border-radius:6px; font-weight:700; }
+.mini-meta .mini-title { font-weight:600; font-size:0.95rem; }
+.mini-meta .mini-sub { font-size:0.8rem; color:var(--gt-text-tertiary); }
+
+.recent-reviews { margin-top: 1.25rem; }
+.reviews-list { display:flex; flex-direction:column; gap:0.6rem; }
+.review-item { padding:0.6rem; border-radius:8px; border:1px solid var(--gt-card-border); background:var(--gt-card-bg); }
+.review-header { display:flex; justify-content:space-between; align-items:center; gap:0.5rem; }
+.review-game-title { font-weight:600; }
+.review-content { margin-top:0.45rem; color:var(--gt-text-secondary); }
+.review-card-header { display:flex; align-items:center; gap:0.75rem; }
+.review-header-badges { display:flex; gap:0.5rem; align-items:center; margin-left:auto; }
+.review-header-badges .badge { padding: 0.22rem 0.5rem; border-radius: 999px; font-size: 0.8rem; }
+.review-header-badges .badge--muted { background: transparent; color: var(--gt-text-tertiary); border: 1px solid rgba(0,0,0,0.06); }
+.review-meta { display: none !important; }
+
+.profile-sections { display:flex; gap:1rem; margin-top:1rem; }
+.profile-left { flex:1 1 60%; }
+.profile-right { flex:1 1 40%; }
+
+@media (max-width: 900px) {
+  .library-grid { grid-template-columns: repeat(2, 1fr); }
+  .profile-sections { flex-direction:column; }
+}
+
+/* CENTRAR INFO CON AVATAR EN DESKTOP */
+@media (min-width: 900px) {
+  .profile-header {
+    align-items: center;     /* <--- centra verticalmente el avatar con la info */
+    flex-wrap: nowrap;       /* evita que se bajen en desktop */
+  }
+
+  .profile-main {
+    align-items: center;     /* alinea texto verticalmente con la foto */
+  }
+}

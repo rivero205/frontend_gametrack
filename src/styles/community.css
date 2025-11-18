@@ -1,0 +1,894 @@
+/* ===================================
+   COMMUNITY PAGE - RESPONSIVE STYLES
+   =================================== */
+
+/* Base Styles */
+.community-page {
+  background: var(--gt-bg-primary);
+  color: var(--gt-text-primary);
+  min-height: 100vh;
+}
+
+.community-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gt-space-lg);
+  box-sizing: border-box;
+}
+
+/* Header */
+.community-header {
+  padding: var(--gt-space-2xl) var(--gt-space-xl);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--gt-bg-secondary);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  margin-bottom: var(--gt-space-lg);
+  border-radius: var(--gt-radius-lg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+.community-header .header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--gt-space-md);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.community-header h1 {
+  margin: 0;
+  font-size: var(--gt-text-3xl);
+}
+
+/* Search Bar */
+.community-search {
+  padding: 0 0 var(--gt-space-lg);
+}
+
+.search-area {
+  display: flex;
+  align-items: center;
+  gap: var(--gt-space-md);
+  margin: 0 auto var(--gt-space-md);
+  max-width: 1100px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: var(--gt-space-sm);
+  flex: 1 1 300px;
+  min-width: 0;
+}
+
+.community-search .search-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--gt-space-sm);
+  background: var(--gt-input-bg);
+  border: 1px solid var(--gt-input-border);
+  border-radius: 12px;
+  padding: calc(var(--gt-space-sm) + 2px) var(--gt-space-md);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6) inset, var(--gt-card-shadow-sm);
+  width: 100%;
+}
+
+.community-search .search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--gt-input-text);
+  font-size: var(--gt-text-base);
+  padding: var(--gt-space-sm) 0;
+  width: 100%;
+}
+
+/* Reviews Header & Controls */
+.reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gt-space-md);
+  padding: var(--gt-space-md) 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--gt-space-sm);
+  flex-wrap: wrap;
+}
+
+.filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gt-btn-secondary-bg);
+  color: var(--gt-text-primary);
+  border: 1px solid var(--gt-btn-secondary-border);
+  padding: 8px 12px;
+  border-radius: var(--gt-radius-md);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 180ms ease;
+  white-space: nowrap;
+}
+
+.filter-toggle:hover {
+  background: var(--gt-btn-secondary-bg-hover);
+  border-color: var(--gt-btn-secondary-border-hover);
+}
+
+.filters-panel {
+  margin-top: var(--gt-space-md);
+  padding: var(--gt-space-md);
+  background: rgba(255,255,255,0.01);
+  border-radius: var(--gt-radius-md);
+  display: flex;
+  gap: var(--gt-space-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 150px;
+  flex: 1 1 auto;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  color: var(--gt-text-secondary);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--gt-text-primary);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  white-space: nowrap;
+}
+
+.badge + .badge { 
+  margin-left: 0.5rem; 
+}
+
+.badge-genre {
+  background: rgba(250, 204, 21, 0.08);
+  color: var(--gt-amber);
+  border-color: rgba(250,204,21,0.12);
+}
+
+.badge-platform {
+  background: rgba(96, 165, 250, 0.06);
+  color: #60a5fa;
+  border-color: rgba(96,165,250,0.12);
+}
+
+.badge-count {
+  background: rgba(255,255,255,0.01);
+  color: var(--gt-text-secondary);
+  border-color: rgba(255,255,255,0.03);
+}
+
+/* Community Posts Grid */
+.community-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--gt-space-xl);
+  padding: var(--gt-space-lg) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Game Post Cards */
+.game-post {
+  background: var(--gt-card-bg);
+  border: var(--gt-border-width) solid var(--gt-card-border);
+  border-radius: var(--gt-radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--gt-card-shadow);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.game-post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+}
+
+.game-post-header {
+  position: relative;
+}
+
+.game-cover {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  background: var(--gt-card-cover-bg);
+}
+
+.game-info {
+  padding: var(--gt-space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.game-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--gt-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.game-info .meta {
+  display: flex;
+  gap: var(--gt-space-sm);
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--gt-text-secondary);
+  font-size: 0.9rem;
+}
+
+.game-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Comments Thread */
+.comments-thread {
+  padding: var(--gt-space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gt-space-md);
+  border-top: 1px solid var(--gt-card-border);
+}
+
+.comment {
+  display: flex;
+  gap: var(--gt-space-md);
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  border: 1px solid var(--gt-card-border);
+  padding: var(--gt-space-sm);
+  border-radius: var(--gt-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+.comment.liked {
+  border-color: rgba(74,222,128,0.22);
+  background: linear-gradient(180deg, rgba(74,222,128,0.03), rgba(255,255,255,0.01));
+  box-shadow: 0 8px 20px rgba(16,185,129,0.06);
+}
+
+.comment-left {
+  flex-shrink: 0;
+}
+
+.comment-left .avatar,
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000; /* Mostrar letra sobre fondo negro cuando no hay imagen */
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.comment-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--gt-text-secondary);
+  flex-wrap: wrap;
+}
+
+.author-name {
+  color: var(--gt-text-primary);
+  font-weight: var(--gt-font-medium);
+  word-break: break-word;
+}
+
+.comment-date {
+  white-space: nowrap;
+}
+
+.comment-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.comment-text {
+  margin: 0;
+  color: var(--gt-text-secondary);
+  line-height: 1.6;
+  padding: 0.45rem 0.5rem;
+  border-radius: var(--gt-radius-md);
+  background: rgba(255,255,255,0.01);
+  word-break: break-word;
+}
+
+.comment-text.clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.comment-text.full {
+  display: block;
+  overflow: visible;
+}
+
+.comment-actions {
+  margin-top: 6px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Like Button */
+
+.like-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gt-space-xs);
+  background: transparent; /* fondo transparente por defecto */
+  color: var(--gt-text-primary);
+  border: 1px solid rgba(255,255,255,0.06); /* línea blanca sutil */
+  border-radius: 999px; /* más redondeado */
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+  margin-bottom: var(--gt-space-sm); /* espacio debajo del botón */
+}
+
+.like-button:hover {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.12);
+  transform: translateY(-1px);
+}
+
+.like-button.liked {
+  background: linear-gradient(180deg, rgba(74,222,128,1), rgba(52,211,153,1));
+  color: #052e21;
+  border-color: rgba(34,197,94,0.9);
+}
+
+.like-button.popped {
+  animation: like-pop 360ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes like-pop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.18); }
+  65% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+/* Stars */
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.star {
+  color: #fff;
+}
+
+.star.filled {
+  color: #fbbf24 !important;
+  fill: #fbbf24 !important;
+  stroke: #fbbf24 !important;
+}
+
+/* New Review Form */
+.new-review-form {
+  margin-top: var(--gt-space-sm);
+  padding: var(--gt-space-md);
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  border-radius: var(--gt-radius-md);
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.new-review-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.new-review-user .name {
+  font-weight: var(--gt-font-medium);
+  color: var(--gt-text-primary);
+}
+
+.new-review-user .hint {
+  font-size: 0.85rem;
+  color: var(--gt-text-secondary);
+}
+
+.new-review-form textarea {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  color: var(--gt-text-primary);
+  box-sizing: border-box;
+}
+
+.new-review-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.new-review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  gap: 12px;
+}
+
+.new-review-footer .char-count {
+  color: var(--gt-text-secondary);
+  font-size: 0.85rem;
+}
+
+.new-review-footer .actions {
+  display: flex;
+  gap: 8px;
+}
+
+.new-review-form .btn-primary[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .new-review-form textarea { min-height: 80px; }
+  .new-review-footer { flex-direction: column-reverse; align-items: stretch; }
+  .new-review-footer .actions { justify-content: space-between; }
+}
+
+.new-review-form label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--gt-text-primary);
+  margin-bottom: 6px;
+  font-weight: 700; /* más destacado */
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Acento visual para los labels (punto pequeño) */
+/* viñeta removed: labels keep bold/uppercase styling only */
+
+.new-review-form textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  color: var(--gt-text-primary);
+  box-sizing: border-box;
+}
+
+.stars-input {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.star-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 150ms ease;
+}
+
+.star-button:hover {
+  transform: scale(1.1);
+}
+
+/* Toggle Buttons */
+.reviews-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.show-more-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--gt-text-primary);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 180ms ease;
+}
+
+.show-more-btn:hover {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(74,222,128,0.12);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: var(--gt-space-2xl);
+  color: var(--gt-text-secondary);
+}
+
+.empty-state svg {
+  color: var(--gt-text-tertiary);
+  margin-bottom: var(--gt-space-md);
+}
+
+/* Callouts */
+.community-callouts {
+  padding: var(--gt-space-xl);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--gt-space-md);
+}
+
+.community-callouts .callout {
+  background: var(--gt-card-bg);
+  border: 1px solid var(--gt-card-border);
+  border-radius: var(--gt-radius-lg);
+  box-shadow: var(--gt-card-shadow);
+  padding: var(--gt-space-lg);
+  border-left: 4px solid var(--gt-emerald);
+}
+
+/* ===================================
+   TABLET RESPONSIVE (max-width: 1100px)
+   =================================== */
+@media (max-width: 1100px) {
+  .community-container {
+    padding: 0 var(--gt-space-md);
+  }
+
+  .community-posts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gt-space-lg);
+    padding: var(--gt-space-md);
+  }
+
+  .community-header h1 {
+    font-size: var(--gt-text-2xl);
+  }
+
+  .game-cover {
+    height: 200px;
+  }
+}
+
+/* ===================================
+   MOBILE RESPONSIVE (max-width: 768px)
+   =================================== */
+@media (max-width: 768px) {
+  .community-posts {
+    grid-template-columns: 1fr;
+    gap: var(--gt-space-md);
+  }
+
+  .community-header {
+    padding: var(--gt-space-lg) var(--gt-space-md);
+  }
+
+  .reviews-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reviews-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .filter-toggle {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .filters-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .game-cover {
+    height: 180px;
+  }
+
+  .game-actions {
+    flex-direction: column;
+  }
+
+  .game-actions button {
+    width: 100%;
+  }
+}
+
+/* ===================================
+   MOBILE SMALL (max-width: 600px)
+   =================================== */
+@media (max-width: 600px) {
+  .community-container {
+    padding: 0 var(--gt-space-sm);
+  }
+
+  .community-header {
+    padding: var(--gt-space-md);
+    margin-bottom: var(--gt-space-md);
+  }
+
+  .community-header h1 {
+    font-size: var(--gt-text-xl);
+    text-align: center;
+  }
+
+  .community-posts {
+    padding: var(--gt-space-sm);
+    gap: var(--gt-space-md);
+  }
+
+  .game-post {
+    border-radius: var(--gt-radius-lg);
+  }
+
+  .game-cover {
+    height: 160px;
+  }
+
+  .game-info {
+    padding: var(--gt-space-sm);
+  }
+
+  .game-info h3 {
+    font-size: 1rem;
+  }
+
+  .game-info .meta {
+    gap: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .comments-thread {
+    padding: var(--gt-space-sm);
+    gap: var(--gt-space-sm);
+  }
+
+  .comment {
+    padding: var(--gt-space-xs);
+    gap: var(--gt-space-sm);
+  }
+
+  .comment-left .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .comment-meta {
+    gap: 8px;
+    font-size: 0.85rem;
+  }
+
+  /* En móvil: nombre, luego fecha debajo y puntuación debajo de la fecha */
+  .comment-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .comment-meta .author-name { order: 1; }
+  .comment-meta .comment-date { order: 2; }
+  .comment-meta .comment-rating { order: 3; }
+
+  /* Ajustes menores para la puntuación y fecha en móvil */
+  .comment-meta .comment-date {
+    color: var(--gt-text-secondary);
+    font-size: 0.85rem;
+  }
+
+  .comment-meta .comment-rating {
+    margin-top: 0;
+  }
+
+  /* Asegurar que el botón de like tenga margen inferior en móvil también */
+  .like-button {
+    margin-bottom: var(--gt-space-sm);
+  }
+
+  .comment-text {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  .like-button {
+    padding: 5px 8px;
+    font-size: 0.85rem;
+  }
+
+  .new-review-form {
+    padding: var(--gt-space-sm);
+  }
+
+  .new-review-form textarea {
+    min-height: 60px;
+    font-size: 0.9rem;
+  }
+
+  /* Etiquetas del formulario ligeramente más pequeñas en móvil */
+  .new-review-form label {
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
+  }
+
+  /* Hacer los botones Publicar/Cancelar un poco más pequeños en móvil */
+  .new-review-footer .actions .btn-primary,
+  .new-review-footer .actions .btn-secondary {
+    padding: 6px 10px !important;
+    font-size: 0.86rem !important;
+  }
+
+  .stars-input {
+    gap: 6px;
+  }
+
+  .star-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .community-callouts {
+    padding: var(--gt-space-md);
+    grid-template-columns: 1fr;
+  }
+
+  .search-area {
+    flex-direction: column;
+    gap: var(--gt-space-sm);
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .reviews-controls {
+    flex-direction: column;
+    gap: var(--gt-space-sm);
+  }
+
+  .filter-toggle {
+    width: 100%;
+  }
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* Ensure images don't break layout */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===================================
+   MOBILE TWEAKS (overrides)
+   Increase gaps between game cards, shrink write-review button and badges
+   =================================== */
+@media (max-width: 768px) {
+  .community-posts {
+    gap: var(--gt-space-lg) !important;
+  }
+
+  .game-actions .btn-secondary {
+    padding: 6px 10px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .badge {
+    font-size: 0.72rem !important;
+    padding: 0.18rem 0.36rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .community-posts {
+    gap: var(--gt-space-lg) !important;
+  }
+
+  .game-post {
+    margin-bottom: var(--gt-space-md) !important;
+  }
+
+  .game-actions .btn-secondary {
+    padding: 5px 8px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .badge {
+    font-size: 0.65rem !important;
+    padding: 0.18rem 0.36rem !important;
+  }
+}

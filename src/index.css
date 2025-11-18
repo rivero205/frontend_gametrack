@@ -1,0 +1,7 @@
+@import './styles/design-system.css';
+@import './styles/design-tokens.css';
+
+body {
+  margin: 0;
+  padding: 0;
+}

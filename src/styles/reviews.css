@@ -1,0 +1,150 @@
+/* ===== REVIEWS LIST (ReviewsList component) ===== */
+.reviews-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gt-space-lg);
+  padding: 1rem 0;
+}
+
+.review-card {
+  display: flex;
+  gap: var(--gt-space-lg);
+  align-items: flex-start;
+  background: var(--gt-card-bg);
+  border-radius: var(--gt-radius-xl);
+  padding: var(--gt-space-2xl);
+  border: var(--gt-border-width) solid var(--gt-card-border);
+  transition: all var(--gt-transition-base);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gt-border-secondary, rgba(255,255,255,0.06));
+}
+
+.review-card-left {
+  flex: 0 0 120px;
+}
+
+.review-cover {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--gt-gradient-emerald);
+}
+
+.review-cover.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gt-text-secondary);
+}
+
+.review-card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card-header {
+  display: flex;
+  gap: var(--gt-space-lg);
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: var(--gt-space-md);
+}
+
+.review-game-title {
+  font-size: var(--gt-text-lg);
+  font-weight: var(--gt-font-semibold);
+  color: var(--gt-text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+.review-header-badges {
+  display: flex;
+  gap: var(--gt-space-sm);
+  align-items: center;
+}
+
+.review-actions {
+  display: flex;
+  gap: var(--gt-space-sm);
+  align-items: center;
+}
+
+.review-text {
+  color: var(--gt-text-primary);
+  line-height: 1.6;
+  margin: 0.25rem 0 0 0;
+}
+
+.review-text--featured {
+  font-weight: 500;
+}
+
+.review-text--muted {
+  color: var(--gt-text-secondary);
+}
+
+/* responsive adjustments for reviews */
+@media (max-width: 768px) {
+  .review-card {
+    flex-direction: column;
+    padding: var(--gt-space-lg);
+  }
+  .review-card-left {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .review-cover {
+    width: 100%;
+    height: 180px;
+    border-radius: var(--gt-radius-lg);
+  }
+  /* Make header children flow into the card body so we can reorder them */
+  .review-card-header {
+    display: contents;
+  }
+
+  /* Ensure the card body is column flex so ordering works */
+  .review-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gt-space-sm);
+  }
+
+  /* Put badges near the top */
+  .review-header-badges {
+    order: 1;
+    align-self: flex-start;
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  /* The main text should come after title/badges */
+  .review-text {
+    order: 2;
+  }
+
+  /* Move the action buttons to the end (after the text) */
+  .review-actions {
+    order: 3;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.25rem;
+    gap: var(--gt-space-sm);
+  }
+
+  .review-actions .icon-btn {
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .review-actions svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
