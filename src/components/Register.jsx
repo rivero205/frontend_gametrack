@@ -52,9 +52,9 @@ export default function Register({ onSuccess }) {
             .map(s => s.trim())
             .filter(Boolean);
 
-      const { user } = await registerUser(payload);
+      const { user, token } = await registerUser(payload);
       success('Registro exitoso');
-      onSuccess && onSuccess({ user });
+      onSuccess && onSuccess({ user, token });
     } catch (err) {
       // Log full error and payload for debugging server 400/413 responses
       try {

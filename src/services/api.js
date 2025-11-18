@@ -3,7 +3,17 @@
 const BASE = import.meta.env.VITE_API_BASE || "/api";
 
 // Build headers without reading localStorage token. Authentication is via httpOnly cookie.
+// Build authentication headers.
+// If a token is stored in localStorage (key `token`) include it as Bearer token.
 function authHeaders(extra = {}) {
+  try {
+    const token = localStorage.getItem('token');
+    if (token) {
+      return { Authorization: `Bearer ${token}`, ...extra };
+    }
+  } catch {
+    // ignore localStorage errors (e.g., SSR or restricted environments)
+  }
   return { ...extra };
 }
 
@@ -22,7 +32,7 @@ async function handleResponse(res) {
     // Log response body to help debugging 4xx/5xx errors
     try {
       console.warn('[api] Request failed', { status: res.status, body: errorBody });
-    } catch (logErr) {
+    } catch {
       // ignore logging errors
     }
     const err = new Error(errorBody.message || "API request failed");

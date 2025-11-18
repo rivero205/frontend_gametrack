@@ -14,10 +14,10 @@ export default function Login({ onSuccess }) {
     e.preventDefault();
     setLoading(true);
     try {
-  const { user } = await loginUser(formData);
-  // Guardamos solo información pública del usuario en el provider via login()
-  success('Ingreso exitoso');
-  onSuccess && onSuccess({ user });
+      const { user, token } = await loginUser(formData);
+      // Guardamos solo información pública del usuario en el provider via login()
+      success('Ingreso exitoso');
+      onSuccess && onSuccess({ user, token });
     } catch (err) {
       console.error('Login error:', err);
       showError(err?.body?.message || 'Error al ingresar');
