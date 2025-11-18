@@ -1,4 +1,5 @@
 import React from 'react';
+import { resolveImageUrl } from '../utils/helpers';
 import { Star, Trash2, Edit2, Check } from 'lucide-react';
 
 export default function GameCard({ game, reviews = [], onEdit, onDelete, onToggleCompleted, onAddReview, readOnly = false, onView }) {
@@ -7,7 +8,7 @@ export default function GameCard({ game, reviews = [], onEdit, onDelete, onToggl
   return (
     <div className="game-card" onClick={(e) => { if (onView && !e.target.closest('.icon-btn') && !e.target.closest('button')) onView(game); }} role={onView ? 'button' : undefined} tabIndex={onView ? 0 : undefined}>
       {game.imagenPortada ? (
-        <img src={game.imagenPortada} alt={game.titulo} className="game-cover" />
+        <img src={resolveImageUrl(game.imagenPortada)} alt={game.titulo} className="game-cover" />
       ) : (
         <div className="game-cover" />
       )}

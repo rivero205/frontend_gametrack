@@ -73,3 +73,37 @@ export const truncateText = (text, maxLength = 100) => {
   if (!text || text.length <= maxLength) return text;
   return text.slice(0, maxLength).trim() + '...';
 };
+
+/**
+ * Resolve an image URL coming from the API/database into an absolute URL
+ * using the configured backend origin (VITE_API_BASE). This helps when
+ * stored URLs include localhost paths from developer machines or are
+ * relative (start with `/assets/...`).
+ */
+export function resolveImageUrl(url) {
+  if (!url) return null;
+  try {
+    const base = import.meta.env.VITE_API_BASE || '/api';
+    const backendOrigin = base.startsWith('http') ? base.replace(/\/api$/,'') : '';
+
+    // Absolute URL already
+    if (/^https?:\/\//i.test(url)) {
+      // If the URL points to localhost (developer upload), map it to backend origin when available
+      if (url.includes('localhost') && backendOrigin) {
+        const idx = url.indexOf('/assets');
+        return idx >= 0 ? backendOrigin + url.slice(idx) : backendOrigin + url;
+      }
+      return url;
+    }
+
+    // Relative path (starts with '/'), prefix backend origin if available
+    if (url.startsWith('/')) {
+      return backendOrigin ? backendOrigin + url : url;
+    }
+
+    // Fallback: return as-is
+    return url;
+  } catch {
+    return url;
+  }
+}

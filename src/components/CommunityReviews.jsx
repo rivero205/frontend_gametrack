@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { MessageSquare, ThumbsUp, Star } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { getAllCommunityReviews, likeReview } from '../services/api.js';
+import { resolveImageUrl } from '../utils/helpers';
 import { useNavigate } from 'react-router-dom';
 import ConfirmDialog from './ConfirmDialog';
 import Loader from './Loader';
@@ -178,10 +179,11 @@ const CommunityReviews = ({ externalSearchTerm, externalFilterGenre, externalFil
   const Avatar = ({ src, alt, initials }) => {
     const [imgError, setImgError] = useState(false);
     // Mirror the ProfileDropdown behavior: inline styles for exact sizing + object-fit
-    if (src && !imgError) {
+    const resolvedSrc = src ? resolveImageUrl(src) : null;
+    if (resolvedSrc && !imgError) {
       return (
         <img
-          src={src}
+          src={resolvedSrc}
           alt={alt}
           style={{ width: 40, height: 40, borderRadius: 9999, objectFit: 'cover' }}
           onError={() => setImgError(true)}
@@ -345,7 +347,7 @@ const CommunityReviews = ({ externalSearchTerm, externalFilterGenre, externalFil
             <section key={group.game._id || group.game.id} className="game-post">
               <header className="game-post-header">
                 {group.game.imagenPortada && (
-                  <img src={group.game.imagenPortada} alt={group.game.titulo || group.game.name} className="game-cover" onError={(e) => e.target.style.display = 'none'} />
+                  <img src={resolveImageUrl(group.game.imagenPortada)} alt={group.game.titulo || group.game.name} className="game-cover" onError={(e) => e.target.style.display = 'none'} />
                 )}
                 <div className="game-info">
                   <h3>{group.game.titulo || group.game.name || 'Juego'}</h3>
